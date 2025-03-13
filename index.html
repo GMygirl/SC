@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我想你了</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f2; /* 粉色背景 */
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            cursor: pointer; /* 提示用户点击 */
+        }
+        .message {
+            font-size: 32px;
+            color: #ff1493; /* 深粉色文字 */
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .hint {
+            font-size: 16px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="message">💗宋林灿宝宝，我想你了💗</div>
+        <div class="hint">点击页面播放音乐</div>
+    </div>
+    <audio id="bg-music">
+        <source src="https://gmygirl.github.io/PB/" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+    <script>
+        // 监听页面点击事件
+        document.body.addEventListener('click', function () {
+            var audio = document.getElementById('bg-music');
+            audio.play(); // 播放音乐
+            document.querySelector('.hint').style.display = 'none'; // 隐藏提示
+        });
+    </script>
+</body>
+</html>
